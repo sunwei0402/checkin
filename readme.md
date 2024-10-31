@@ -1,8 +1,8 @@
 # Checkin
 
-GitHub Actions 实现 [GLaDOS][glados] 自动签到
+GitHub Actions 实现 [GLaDOS][reg] 自动签到
 
-([GLaDOS][reg]可用邀请码: `M8543-E4N37-Z0JZY-BHTS0`, 双方都有奖励天数)
+([GLaDOS][reg]注册可用邀请码: `M8543-E4N37-Z0JZY-BHTS0`, 双方都有奖励天数)
 
 ## 使用说明
 
