@@ -18,4 +18,4 @@ GitHub Actions 实现 [GLaDOS][glados] 自动签到
 
 [glados]: https://github.com/glados-network/GLaDOS
 [pushplus]: https://www.pushplus.plus/
-[reg]
+[reg]:https://glados.space/landing/M8543-E4N37-Z0JZY-BHTS0
