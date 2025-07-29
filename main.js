@@ -12,19 +12,18 @@ const glados = async () => {
       headers: { ...headers, 'content-type': 'application/json' },
       body: '{"token":"glados.one"}',
     }).then((r) => r.json())
+    
     const status = await fetch('https://glados.rocks/api/user/status', {
       method: 'GET',
       headers,
     }).then((r) => r.json())
     
-    // 关键修改：增加数据存在性校验，避免访问 undefined 的属性
-    let leftDays = '未知' // 默认值
-    if (status && status.data && status.data.leftDays !== undefined) {
-      leftDays = Number(status.data.leftDays)
-    } else {
-      // 可添加错误提示，方便排查
-      console.warn('获取 leftDays 失败，状态数据结构异常：', status)
+   // ✅ 安全地读取 leftDays
+    if (!status || status.code !== 0 || !status.data || typeof status.data.leftDays === 'undefined') {
+      throw new Error(`Invalid status response: ${JSON.stringify(status)}`);
     }
+
+    const leftDays = Number(status.data.leftDays); // 转为数字，得到
 
     return [
       'Checkin OK',
